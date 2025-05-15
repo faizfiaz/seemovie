@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:movie_test_app/config/environment_config.dart';
+import 'package:movie_test_app/features/home/home_binding.dart';
 import 'package:movie_test_app/features/home/view/home_screen.dart';
 import 'package:movie_test_app/features/movie_detail/view/movie_detail_screen.dart';
 import 'package:movie_test_app/features/splashscreen/splash_screen.dart';
@@ -11,16 +13,18 @@ mixin Routes {
 }
 
 class AppRouter {
-  static Map<String, Widget Function(BuildContext context)> generateRoute() {
-    return {
-      Routes.initialRoute: (context) => SplashScreen.create(),
-      Routes.mainRoute: (context) {
+  static final routes = <GetPage>[
+    GetPage(name: Routes.initialRoute, page: () => SplashScreen.create()),
+    GetPage(
+      name: Routes.mainRoute,
+      binding: HomeBinding(),
+      page: () {
         if (EnvironmentConfig.envName != EnvName.production) {
           return const Banner(message: 'STAGING', textDirection: TextDirection.ltr, location: BannerLocation.topEnd, child: HomeScreen());
         }
         return const HomeScreen();
       },
-      Routes.movieDetailRoute: (context) => const MovieDetailScreen(),
-    };
-  }
+    ),
+    GetPage(name: Routes.movieDetailRoute, page: () => const MovieDetailScreen()),
+  ];
 }

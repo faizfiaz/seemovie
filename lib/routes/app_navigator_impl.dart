@@ -1,65 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:movie_test_app/routes/app_navigator.dart';
 
 class AppNavigatorImpl extends AppNavigator {
-  final GlobalKey<NavigatorState> navigatorKey;
-
-  AppNavigatorImpl(this.navigatorKey);
-
   @override
   void popUntil(String route) {
-    if (navigatorKey.currentState?.canPop() ?? false) {
-      navigatorKey.currentState?.popUntil(ModalRoute.withName(route));
-    }
+    Get.until((routeObj) => routeObj.settings.name == route);
   }
 
   @override
   void popWithResult({Object? result}) {
-    if (navigatorKey.currentState?.canPop() ?? false) {
-      navigatorKey.currentState?.pop(result);
+    if (Get.key.currentState?.canPop() ?? false) {
+      Get.back(result: result);
     }
   }
 
   @override
   Future<Object?> pushNamedWithResult(String route, {Object? arguments}) async {
-    final result = await navigatorKey.currentState?.pushNamed(route, arguments: arguments);
-    return result;
+    return await Get.toNamed(route, arguments: arguments);
   }
 
   @override
   Future<Object?> pushReplacementNamedWithResult(String route, {Object? arguments}) async {
-    final result = await navigatorKey.currentState?.pushReplacementNamed(route, arguments: arguments);
-    return result;
+    return await Get.offNamed(route, arguments: arguments);
   }
 
   @override
-  Future<Object?> pushNamedAndRemoveUntilWithResult(String newRouteName, bool Function(Route p1) predicate, {Object? arguments}) async {
-    final result = await navigatorKey.currentState?.pushNamedAndRemoveUntil(newRouteName, predicate, arguments: arguments);
-    return result;
+  Future<Object?> pushNamedAndRemoveUntilWithResult(String newRouteName, bool Function(Route route) predicate, {Object? arguments}) async {
+    return await Get.offNamedUntil(newRouteName, (route) => predicate(route), arguments: arguments);
   }
 
   @override
   String currentRoute() {
-    String? currentPath;
-    navigatorKey.currentState?.popUntil((route) {
-      currentPath = route.settings.name;
-      return true;
-    });
-    return currentPath ?? '';
+    return Get.currentRoute;
   }
 
   @override
   Object? currentArguments() {
-    Object? currentArguments;
-    navigatorKey.currentState?.popUntil((route) {
-      currentArguments = route.settings.arguments;
-      return true;
-    });
-    return currentArguments;
+    return Get.arguments;
   }
 
   @override
   BuildContext? getContext() {
-    return navigatorKey.currentContext;
+    return Get.context;
   }
 }

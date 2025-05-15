@@ -39,7 +39,7 @@ class App extends StatelessWidget {
       title: 'See Movie',
       initialBinding: InitialBinding(),
       debugShowCheckedModeBanner: false,
-      routes: AppRouter.generateRoute(),
+      getPages: AppRouter.routes,
       navigatorKey: Get.key,
       navigatorObservers: [DioRequestInspector.navigatorObserver],
       initialRoute: Routes.initialRoute,

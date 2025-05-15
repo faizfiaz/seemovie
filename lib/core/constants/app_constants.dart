@@ -9,4 +9,8 @@ mixin AppConstants {
 
   static bool get isDebug => EnvironmentConfig.envName == EnvName.staging;
   static bool get isProduction => EnvironmentConfig.envName == EnvName.production;
+
+  static String imageFullPath(String value) {
+    return 'https://image.tmdb.org/t/p/w500$value';
+  }
 }
