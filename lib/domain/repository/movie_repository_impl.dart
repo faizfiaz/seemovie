@@ -26,4 +26,19 @@ class MovieRepositoryImpl extends MovieRepository {
   Future<Pair<int, List<SearchMovieItem>>> searchMovies({int page = 1, required String query}) async {
     return await remoteDataSource.searchMovie(page: page, query: query);
   }
+
+  @override
+  List<DetailMovie> getFavoriteMovies() {
+    return localDataSource.getFavoriteMovies();
+  }
+
+  @override
+  void toogleMovieFavorite({required DetailMovie movie}) {
+    return localDataSource.toogleFavoriteMovie(movie: movie);
+  }
+
+  @override
+  bool isMovieFavorite({required int id}) {
+    return localDataSource.isMovieFavorite(id: id);
+  }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:movie_test_app/config/environment_config.dart';
+import 'package:movie_test_app/features/favorites/favorites_binding.dart';
+import 'package:movie_test_app/features/favorites/view/favorites_screen.dart';
 import 'package:movie_test_app/features/home/home_binding.dart';
 import 'package:movie_test_app/features/home/view/home_screen.dart';
 import 'package:movie_test_app/features/movie_detail/movie_detail_binding.dart';
@@ -14,6 +16,7 @@ mixin Routes {
   static const String mainRoute = '/home';
   static const String movieDetailRoute = '/movie_detail';
   static const String searchRoute = '/search';
+  static const String favoritesRoute = '/favorites';
 }
 
 class AppRouter {
@@ -31,5 +34,6 @@ class AppRouter {
     ),
     GetPage(name: Routes.movieDetailRoute, binding: MovieDetailBinding(), page: () => const MovieDetailScreen()),
     GetPage(name: Routes.searchRoute, binding: SearchBinding(), page: () => SearchScreen()),
+    GetPage(name: Routes.favoritesRoute, binding: FavoritesBinding(), page: () => const FavoritesScreen()),
   ];
 }

@@ -2,8 +2,10 @@ part of '../movie_detail_screen.dart';
 
 class _MovieMiddleContent extends StatelessWidget {
   final DetailMovie detail;
+  final VoidCallback onFavoritePressed;
+  final bool isFavorite;
 
-  const _MovieMiddleContent({required this.detail});
+  const _MovieMiddleContent({required this.detail, required this.onFavoritePressed, this.isFavorite = false});
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +27,29 @@ class _MovieMiddleContent extends StatelessWidget {
                 ),
               ),
             const SizedBox(width: 16),
-            if (detail.tagline?.isNotEmpty ?? false)
-              Expanded(
-                child: Text(detail.tagline!, style: AppTextTheme.bodySmall.copyWith(color: Colors.white70, fontStyle: FontStyle.italic)),
+            Expanded(
+              child: Column(
+                children: [
+                  if (detail.tagline?.isNotEmpty ?? false) ...[
+                    Text(detail.tagline!, style: AppTextTheme.bodySmall.copyWith(color: Colors.white70, fontStyle: FontStyle.italic)),
+                    const SizedBox(height: 8),
+                  ],
+
+                  ElevatedButton.icon(
+                    onPressed: onFavoritePressed,
+                    label: Text(isFavorite ? 'Un-favorite' : 'Favorite', style: AppTextTheme.bodySmall.copyWith(color: Colors.white70)),
+                    icon: Icon(Icons.favorite, color: isFavorite ? Colors.red : Colors.white70),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(99)),
+                      shadowColor: Colors.transparent,
+                      side: const BorderSide(color: Colors.white70),
+                    ),
+                  ),
+                ],
               ),
+            ),
+
             const SizedBox(height: 12),
           ],
         ),

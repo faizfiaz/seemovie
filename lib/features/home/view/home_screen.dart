@@ -29,10 +29,10 @@ class HomeScreen extends GetView<HomeScreenController> {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.favorite, color: Colors.red),
+            icon: const Icon(Icons.favorite),
             onPressed: () {
               final navigator = Get.find<AppNavigator>();
-              navigator.pushNamedWithResult(Routes.searchRoute);
+              navigator.pushNamedWithResult(Routes.favoritesRoute);
             },
           ),
         ],

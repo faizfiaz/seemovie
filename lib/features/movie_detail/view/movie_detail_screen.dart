@@ -22,6 +22,7 @@ class MovieDetailScreen extends GetView<MovieDetailScreenController> {
         final detail = controller.detail.value;
         final isLoading = controller.isLoading.value;
         final error = controller.error.value;
+        final isFavorite = controller.isFavorite.value;
 
         if (isLoading) {
           return const Center(child: CircularProgressIndicator());
@@ -41,7 +42,13 @@ class MovieDetailScreen extends GetView<MovieDetailScreenController> {
             CustomScrollView(
               slivers: [
                 _MovieDetailAppBar(backdropPath: detail.backdropPath, title: detail.title),
-                _MovieMiddleContent(detail: detail),
+                _MovieMiddleContent(
+                  detail: detail,
+                  isFavorite: isFavorite,
+                  onFavoritePressed: () {
+                    controller.toggleFavorite(detail);
+                  },
+                ),
                 _MovieContentInfo(detail: detail),
               ],
             ),

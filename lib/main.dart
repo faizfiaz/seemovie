@@ -7,6 +7,7 @@ import 'package:logger/web.dart';
 import 'package:movie_test_app/config/theme/app_theme.dart';
 import 'package:movie_test_app/core/bindings/initial_binding.dart';
 import 'package:movie_test_app/core/constants/app_constants.dart';
+import 'package:movie_test_app/core/hive/app_hive.dart';
 import 'package:movie_test_app/core/network/dio_provider.dart';
 import 'package:movie_test_app/routes/app_router.dart';
 
@@ -16,6 +17,8 @@ void main() {
   runZonedGuarded<Future<void>>(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+
+      await AppHive.init();
 
       if (AppConstants.isDebug) {
         runApp(DioRequestInspectorMain(inspector: inspector, child: App()));

@@ -9,4 +9,10 @@ abstract class MovieRepository {
   Future<DetailMovie> getDetailMovie({required int id});
 
   Future<Pair<int, List<SearchMovieItem>>> searchMovies({int page = 1, required String query});
+
+  void toogleMovieFavorite({required DetailMovie movie});
+
+  List<DetailMovie> getFavoriteMovies();
+
+  bool isMovieFavorite({required int id});
 }
