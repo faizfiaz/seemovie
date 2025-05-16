@@ -15,6 +15,7 @@ class _MovieDetailBackground extends StatelessWidget {
           child: CachedNetworkImage(
             imageUrl: AppConstants.imageFullPath(backdropPath ?? '', size: AppConstants.imageW780),
             fit: BoxFit.cover,
+            errorWidget: (context, url, error) => SizedBox.shrink(),
           ),
         ),
         const DecoratedBox(decoration: BoxDecoration(color: Colors.black87)),

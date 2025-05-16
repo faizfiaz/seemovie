@@ -14,11 +14,7 @@ class _MovieDetailAppBar extends StatelessWidget {
       expandedHeight: 200,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
-        title: Text(
-          title ?? '',
-          style: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w500),
-          textAlign: TextAlign.center,
-        ),
+        title: Text(title ?? '', style: AppTextTheme.headline.copyWith(color: Colors.white), textAlign: TextAlign.center),
         background: Stack(
           fit: StackFit.expand,
           children: [

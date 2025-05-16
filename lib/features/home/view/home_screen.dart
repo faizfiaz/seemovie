@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:movie_test_app/config/theme/app_colors.dart';
+import 'package:movie_test_app/config/theme/app_text_theme.dart';
 import 'package:movie_test_app/core/constants/app_constants.dart';
 import 'package:movie_test_app/domain/entities/home_movie_item.dart';
 import 'package:movie_test_app/features/home/controller/home_screen_controller.dart';
@@ -18,10 +19,17 @@ class HomeScreen extends GetView<HomeScreenController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Now Playing'),
+        title: const Text('See Movies', style: AppTextTheme.headline),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
+            onPressed: () {
+              final navigator = Get.find<AppNavigator>();
+              navigator.pushNamedWithResult(Routes.searchRoute);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.favorite, color: Colors.red),
             onPressed: () {
               final navigator = Get.find<AppNavigator>();
               navigator.pushNamedWithResult(Routes.searchRoute);

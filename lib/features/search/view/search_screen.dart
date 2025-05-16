@@ -4,6 +4,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:movie_test_app/config/theme/app_colors.dart';
+import 'package:movie_test_app/config/theme/app_text_theme.dart';
 import 'package:movie_test_app/core/constants/app_constants.dart';
 import 'package:movie_test_app/core/utils/debouncer.dart';
 import 'package:movie_test_app/domain/entities/search_movie_item.dart';
@@ -31,12 +32,17 @@ class SearchScreen extends GetView<SearchScreenController> {
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
                   focusNode: _focusNode,
+                  style: AppTextTheme.bodySmall,
                   onChanged: (value) {
                     _debouncer.run(() {
                       controller.setQuery(query: value);
                     });
                   },
-                  decoration: InputDecoration(hintText: 'Search for movies', border: OutlineInputBorder()),
+                  decoration: InputDecoration(
+                    hintText: 'Search for movies',
+                    border: OutlineInputBorder(),
+                    hintStyle: AppTextTheme.bodySmall.copyWith(color: Colors.grey),
+                  ),
                 ),
               ),
             ),

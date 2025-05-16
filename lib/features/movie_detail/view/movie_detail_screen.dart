@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:movie_test_app/config/theme/app_text_theme.dart';
 import 'package:movie_test_app/core/constants/app_constants.dart';
 import 'package:movie_test_app/domain/entities/detail_movie.dart';
 import 'package:movie_test_app/features/movie_detail/controller/movie_detail_screen_controller.dart';
@@ -31,7 +32,7 @@ class MovieDetailScreen extends GetView<MovieDetailScreenController> {
         }
 
         if (detail == null) {
-          return const Center(child: Text('No detail found.'));
+          return const Center(child: Text('No detail found.', style: AppTextTheme.bodySmall));
         }
 
         return Stack(

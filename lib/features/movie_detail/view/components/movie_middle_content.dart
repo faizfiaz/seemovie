@@ -27,7 +27,7 @@ class _MovieMiddleContent extends StatelessWidget {
             const SizedBox(width: 16),
             if (detail.tagline?.isNotEmpty ?? false)
               Expanded(
-                child: Text(detail.tagline!, style: const TextStyle(fontStyle: FontStyle.italic, fontSize: 12, color: Colors.white)),
+                child: Text(detail.tagline!, style: AppTextTheme.bodySmall.copyWith(color: Colors.white70, fontStyle: FontStyle.italic)),
               ),
             const SizedBox(height: 12),
           ],
