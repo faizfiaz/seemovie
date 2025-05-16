@@ -18,6 +18,11 @@ class InitialBinding extends Bindings {
     Get.lazyPut(() => MovieLocalDatasource());
 
     //repository binding
-    Get.lazyPut<MovieRepository>(() => MovieRepositoryImpl(remoteDataSource: Get.find(), localDataSource: Get.find()));
+    Get.lazyPut<MovieRepository>(
+      () => MovieRepositoryImpl(
+        remoteDataSource: Get.find(),
+        localDataSource: Get.find(),
+      ),
+    );
   }
 }

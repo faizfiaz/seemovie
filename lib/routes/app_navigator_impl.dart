@@ -21,13 +21,24 @@ class AppNavigatorImpl extends AppNavigator {
   }
 
   @override
-  Future<Object?> pushReplacementNamedWithResult(String route, {Object? arguments}) async {
+  Future<Object?> pushReplacementNamedWithResult(
+    String route, {
+    Object? arguments,
+  }) async {
     return await Get.offNamed(route, arguments: arguments);
   }
 
   @override
-  Future<Object?> pushNamedAndRemoveUntilWithResult(String newRouteName, bool Function(Route route) predicate, {Object? arguments}) async {
-    return await Get.offNamedUntil(newRouteName, (route) => predicate(route), arguments: arguments);
+  Future<Object?> pushNamedAndRemoveUntilWithResult(
+    String newRouteName,
+    bool Function(Route route) predicate, {
+    Object? arguments,
+  }) async {
+    return await Get.offNamedUntil(
+      newRouteName,
+      (route) => predicate(route),
+      arguments: arguments,
+    );
   }
 
   @override

@@ -17,10 +17,10 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    pagingController = PagingController<int, MovieItem>(fetchPage: fetchMovies, getNextPageKey: (state) => _getNextPageKey());
+    pagingController = PagingController<int, MovieItem>(fetchPage: _fetchMovies, getNextPageKey: (state) => _getNextPageKey());
   }
 
-  Future<List<MovieItem>> fetchMovies(int pageKey) async {
+  Future<List<MovieItem>> _fetchMovies(int pageKey) async {
     try {
       final result = await getNowPlaying(page: pageKey);
       totalPage = result.first;

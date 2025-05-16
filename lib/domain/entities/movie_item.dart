@@ -7,5 +7,13 @@ class MovieItem {
   final double? voteAverage;
   final int? voteCount;
 
-  const MovieItem({this.id, this.title, this.overview, this.backdropPath, this.posterPath, this.voteAverage, this.voteCount});
+  const MovieItem({
+    this.id,
+    this.title,
+    this.overview,
+    this.backdropPath,
+    this.posterPath,
+    this.voteAverage,
+    this.voteCount,
+  });
 }

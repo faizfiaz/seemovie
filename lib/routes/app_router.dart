@@ -3,6 +3,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:movie_test_app/config/environment_config.dart';
 import 'package:movie_test_app/features/home/home_binding.dart';
 import 'package:movie_test_app/features/home/view/home_screen.dart';
+import 'package:movie_test_app/features/movie_detail/movie_detail_binding.dart';
 import 'package:movie_test_app/features/movie_detail/view/movie_detail_screen.dart';
 import 'package:movie_test_app/features/splashscreen/splash_screen.dart';
 
@@ -25,6 +26,6 @@ class AppRouter {
         return const HomeScreen();
       },
     ),
-    GetPage(name: Routes.movieDetailRoute, page: () => const MovieDetailScreen()),
+    GetPage(name: Routes.movieDetailRoute, binding: MovieDetailBinding(), page: () => const MovieDetailScreen()),
   ];
 }

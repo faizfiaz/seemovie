@@ -11,10 +11,13 @@ class AppColors {
     final bool isDark = brightness == Brightness.dark;
 
     final cardColor = isDark ? darkBackground.paper : lightBackground.paper;
-    final backgroundColor = isDark ? darkBackground.paper : lightBackground.paper;
+    final backgroundColor =
+        isDark ? darkBackground.paper : lightBackground.paper;
 
-    final bool primaryIsDark = ThemeData.estimateBrightnessForColor(primary) == Brightness.dark;
-    final bool secondaryIsDark = ThemeData.estimateBrightnessForColor(secondary) == Brightness.dark;
+    final bool primaryIsDark =
+        ThemeData.estimateBrightnessForColor(primary) == Brightness.dark;
+    final bool secondaryIsDark =
+        ThemeData.estimateBrightnessForColor(secondary) == Brightness.dark;
 
     return ColorScheme(
       primary: primary,
@@ -94,56 +97,63 @@ class AppColors {
     900: Color(0xFF171717),
   });
 
-  static const ShadeTextColor lightText = ShadeTextColor(0xFF1F1D2B, <String, Color>{
-    _ShadeColorKeys.primary: Color(0xFF1F1D2B),
-    _ShadeColorKeys.secondary: Color(0xFF6B6879),
-    _ShadeColorKeys.disabled: Color(0xFF8D8A9C),
-  });
+  static const ShadeTextColor lightText =
+      ShadeTextColor(0xFF1F1D2B, <String, Color>{
+        _ShadeColorKeys.primary: Color(0xFF1F1D2B),
+        _ShadeColorKeys.secondary: Color(0xFF6B6879),
+        _ShadeColorKeys.disabled: Color(0xFF8D8A9C),
+      });
 
-  static const ShadeTextColor darkText = ShadeTextColor(0xFFFFFFFF, <String, Color>{
-    _ShadeColorKeys.primary: Color(0xFFFFFFFF),
-    _ShadeColorKeys.secondary: Color(0xFF8D8A9C),
-    _ShadeColorKeys.disabled: Color(0xFF6B6879),
-  });
+  static const ShadeTextColor darkText =
+      ShadeTextColor(0xFFFFFFFF, <String, Color>{
+        _ShadeColorKeys.primary: Color(0xFFFFFFFF),
+        _ShadeColorKeys.secondary: Color(0xFF8D8A9C),
+        _ShadeColorKeys.disabled: Color(0xFF6B6879),
+      });
 
-  static const ShadeTextColor purple = ShadeTextColor(0xFF7339EA, <String, Color>{
-    _ShadeColorKeys.primary: Color(0xFF7339EA),
-    _ShadeColorKeys.secondary: Color(0xFFF7F5FF),
-    _ShadeColorKeys.disabled: Color(0xFF8D8A9C),
-  });
+  static const ShadeTextColor purple =
+      ShadeTextColor(0xFF7339EA, <String, Color>{
+        _ShadeColorKeys.primary: Color(0xFF7339EA),
+        _ShadeColorKeys.secondary: Color(0xFFF7F5FF),
+        _ShadeColorKeys.disabled: Color(0xFF8D8A9C),
+      });
 
-  static const ShadeBackgroundColor lightBackground = ShadeBackgroundColor(0x148D8A9C, <String, Color>{
-    _ShadeColorKeys.defaults: Color(0x148D8A9C),
-    _ShadeColorKeys.paper: Color(0xFFFFFFFF),
-    _ShadeColorKeys.neutral: Color(0xFFF8F5FF),
-  });
+  static const ShadeBackgroundColor lightBackground =
+      ShadeBackgroundColor(0x148D8A9C, <String, Color>{
+        _ShadeColorKeys.defaults: Color(0x148D8A9C),
+        _ShadeColorKeys.paper: Color(0xFFFFFFFF),
+        _ShadeColorKeys.neutral: Color(0xFFF8F5FF),
+      });
 
-  static const ShadeBackgroundColor darkBackground = ShadeBackgroundColor(0xFF141220, <String, Color>{
-    _ShadeColorKeys.defaults: Color(0xFF141220),
-    _ShadeColorKeys.paper: Color(0xFF1F1D2B),
-    _ShadeColorKeys.neutral: Color(0x1F8D8A9C),
-  });
+  static const ShadeBackgroundColor darkBackground =
+      ShadeBackgroundColor(0xFF141220, <String, Color>{
+        _ShadeColorKeys.defaults: Color(0xFF141220),
+        _ShadeColorKeys.paper: Color(0xFF1F1D2B),
+        _ShadeColorKeys.neutral: Color(0x1F8D8A9C),
+      });
 
   static const Color divider = Color(0x3D8D8A9C);
   static const Color border = Color(0x52919EAB);
 
-  static const ShadeStateColor lightActionState = ShadeStateColor(0xFF6B6879, <String, Color>{
-    _ShadeColorKeys.active: Color(0xFF6B6879),
-    _ShadeColorKeys.hover: Color(0x148D8A9C),
-    _ShadeColorKeys.selected: Color(0x298D8A9C),
-    _ShadeColorKeys.disabled: Color(0xCC8D8A9C),
-    _ShadeColorKeys.disabledBackground: Color(0x3D8D8A9C),
-    _ShadeColorKeys.focus: Color(0x3D8D8A9C),
-  });
+  static const ShadeStateColor lightActionState =
+      ShadeStateColor(0xFF6B6879, <String, Color>{
+        _ShadeColorKeys.active: Color(0xFF6B6879),
+        _ShadeColorKeys.hover: Color(0x148D8A9C),
+        _ShadeColorKeys.selected: Color(0x298D8A9C),
+        _ShadeColorKeys.disabled: Color(0xCC8D8A9C),
+        _ShadeColorKeys.disabledBackground: Color(0x3D8D8A9C),
+        _ShadeColorKeys.focus: Color(0x3D8D8A9C),
+      });
 
-  static const ShadeStateColor darkActionState = ShadeStateColor(0xFF8D8A9C, <String, Color>{
-    _ShadeColorKeys.active: Color(0xFF8D8A9C),
-    _ShadeColorKeys.hover: Color(0x148D8A9C),
-    _ShadeColorKeys.selected: Color(0x298D8A9C),
-    _ShadeColorKeys.disabled: Color(0xCC8D8A9C),
-    _ShadeColorKeys.disabledBackground: Color(0x3D8D8A9C),
-    _ShadeColorKeys.focus: Color(0x3D8D8A9C),
-  });
+  static const ShadeStateColor darkActionState =
+      ShadeStateColor(0xFF8D8A9C, <String, Color>{
+        _ShadeColorKeys.active: Color(0xFF8D8A9C),
+        _ShadeColorKeys.hover: Color(0x148D8A9C),
+        _ShadeColorKeys.selected: Color(0x298D8A9C),
+        _ShadeColorKeys.disabled: Color(0xCC8D8A9C),
+        _ShadeColorKeys.disabledBackground: Color(0x3D8D8A9C),
+        _ShadeColorKeys.focus: Color(0x3D8D8A9C),
+      });
 }
 
 mixin _ShadeColorKeys {

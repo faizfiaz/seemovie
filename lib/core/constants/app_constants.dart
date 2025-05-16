@@ -10,7 +10,11 @@ mixin AppConstants {
   static bool get isDebug => EnvironmentConfig.envName == EnvName.staging;
   static bool get isProduction => EnvironmentConfig.envName == EnvName.production;
 
-  static String imageFullPath(String value) {
-    return 'https://image.tmdb.org/t/p/w500$value';
+  static const String imageW342 = 'w342';
+  static const String imageW500 = 'w500';
+  static const String imageW780 = 'w780';
+
+  static String imageFullPath(String value, {String size = imageW500}) {
+    return 'https://image.tmdb.org/t/p/$size$value';
   }
 }

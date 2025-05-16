@@ -25,7 +25,10 @@ class SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white, body: Center(child: Text('SEEMOVIEwelcome')));
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(child: Text('SEEMOVIEwelcome')),
+    );
   }
 
   Future<void> startTimer() async {
