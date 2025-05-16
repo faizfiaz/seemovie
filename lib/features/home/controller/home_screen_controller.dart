@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:movie_test_app/domain/entities/movie_item.dart';
+import 'package:movie_test_app/domain/entities/home_movie_item.dart';
 import 'package:movie_test_app/domain/usecases/get_now_playing.dart';
 import 'package:movie_test_app/main.dart';
 
@@ -8,19 +8,19 @@ class HomeScreenController extends GetxController {
   final GetNowPlaying getNowPlaying;
 
   HomeScreenController(this.getNowPlaying);
-  var movies = <MovieItem>[].obs;
+  var movies = <HomeMovieItem>[].obs;
 
-  late final PagingController<int, MovieItem> pagingController;
+  late final PagingController<int, HomeMovieItem> pagingController;
   int page = 1;
   int? totalPage;
 
   @override
   void onInit() {
     super.onInit();
-    pagingController = PagingController<int, MovieItem>(fetchPage: _fetchMovies, getNextPageKey: (state) => _getNextPageKey());
+    pagingController = PagingController<int, HomeMovieItem>(fetchPage: _fetchMovies, getNextPageKey: (state) => _getNextPageKey());
   }
 
-  Future<List<MovieItem>> _fetchMovies(int pageKey) async {
+  Future<List<HomeMovieItem>> _fetchMovies(int pageKey) async {
     try {
       final result = await getNowPlaying(page: pageKey);
       totalPage = result.first;

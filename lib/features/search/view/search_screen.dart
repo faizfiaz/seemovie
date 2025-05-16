@@ -6,7 +6,8 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:movie_test_app/config/theme/app_colors.dart';
 import 'package:movie_test_app/core/constants/app_constants.dart';
 import 'package:movie_test_app/core/utils/debouncer.dart';
-import 'package:movie_test_app/domain/entities/movie_item.dart';
+import 'package:movie_test_app/domain/entities/search_movie_item.dart';
+import 'package:movie_test_app/features/movie_detail/controller/movie_detail_screen_controller.dart';
 import 'package:movie_test_app/features/search/controller/search_screen_controller.dart';
 import 'package:movie_test_app/routes/app_navigator.dart';
 import 'package:movie_test_app/routes/app_router.dart';
@@ -42,7 +43,7 @@ class SearchScreen extends GetView<SearchScreenController> {
             PagingListener(
               controller: controller.pagingController,
               builder:
-                  (context, state, fetchNextPage) => PagedSliverGrid<int, MovieItem>(
+                  (context, state, fetchNextPage) => PagedSliverGrid<int, SearchMovieItem>(
                     state: state,
                     fetchNextPage: fetchNextPage,
                     builderDelegate: PagedChildBuilderDelegate(
@@ -50,11 +51,7 @@ class SearchScreen extends GetView<SearchScreenController> {
                       transitionDuration: const Duration(milliseconds: 300),
                       itemBuilder:
                           (context, item, index) => GestureDetector(
-                            onTap: () {
-                              _focusNode.unfocus();
-                              final navigator = Get.find<AppNavigator>();
-                              navigator.pushNamedWithResult(Routes.movieDetailRoute, arguments: item);
-                            },
+                            onTap: () => _handleOnTap(item),
                             child: CachedNetworkImage(
                               imageUrl: AppConstants.imageFullPath(item.posterPath ?? ''),
                               placeholder:
@@ -77,5 +74,11 @@ class SearchScreen extends GetView<SearchScreenController> {
         ),
       ),
     );
+  }
+
+  void _handleOnTap(SearchMovieItem item) {
+    _focusNode.unfocus();
+    final navigator = Get.find<AppNavigator>();
+    navigator.pushNamedWithResult(Routes.movieDetailRoute, arguments: MovieScreenArguments(id: item.id ?? 0, title: item.title));
   }
 }

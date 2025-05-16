@@ -1,21 +1,16 @@
 import 'package:movie_test_app/data/models/response_list_movie.dart';
-import 'package:movie_test_app/domain/entities/movie_item.dart';
+import 'package:movie_test_app/domain/entities/home_movie_item.dart';
+import 'package:movie_test_app/domain/entities/search_movie_item.dart';
 
 extension ResponseListMovieExtenstion on ResponseListMovie {
-  List<MovieItem> get movies => results?.movies ?? [];
+  List<HomeMovieItem> get movies => results?.homeMovieItem ?? [];
+  List<SearchMovieItem> get searchMovies => results?.searchMovieItem ?? [];
 }
 
 extension ResultExtension on List<Result> {
-  List<MovieItem> get movies =>
+  List<HomeMovieItem> get homeMovieItem => map((movie) => HomeMovieItem(id: movie.id, posterPath: movie.posterPath)).toList();
+  List<SearchMovieItem> get searchMovieItem =>
       map(
-        (movie) => MovieItem(
-          id: movie.id,
-          title: movie.title,
-          overview: movie.overview,
-          posterPath: movie.posterPath,
-          backdropPath: movie.backdropPath,
-          voteAverage: movie.voteAverage,
-          voteCount: movie.voteCount,
-        ),
+        (movie) => SearchMovieItem(id: movie.id, posterPath: movie.posterPath, title: movie.title, voteAverage: movie.voteAverage),
       ).toList();
 }

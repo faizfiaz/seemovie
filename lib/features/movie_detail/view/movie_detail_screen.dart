@@ -16,8 +16,6 @@ class MovieDetailScreen extends GetView<MovieDetailScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    final movie = controller.movie;
-
     return Scaffold(
       body: Obx(() {
         final detail = controller.detail.value;
@@ -38,10 +36,10 @@ class MovieDetailScreen extends GetView<MovieDetailScreenController> {
 
         return Stack(
           children: [
-            _MovieDetailBackground(backdropPath: detail.backdropPath ?? movie.backdropPath),
+            _MovieDetailBackground(backdropPath: detail.backdropPath),
             CustomScrollView(
               slivers: [
-                _MovieDetailAppBar(backdropPath: detail.backdropPath ?? movie.backdropPath, title: detail.title ?? movie.title),
+                _MovieDetailAppBar(backdropPath: detail.backdropPath, title: detail.title),
                 _MovieMiddleContent(detail: detail),
                 _MovieContentInfo(detail: detail),
               ],

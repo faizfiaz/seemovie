@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:movie_test_app/domain/entities/movie_item.dart';
+import 'package:movie_test_app/domain/entities/search_movie_item.dart';
 import 'package:movie_test_app/domain/usecases/search_movie.dart';
 import 'package:movie_test_app/main.dart';
 
@@ -8,9 +8,9 @@ class SearchScreenController extends GetxController {
   final SearchMovie searchMovie;
 
   SearchScreenController(this.searchMovie);
-  var movies = <MovieItem>[].obs;
+  var movies = <SearchMovieItem>[].obs;
 
-  late final PagingController<int, MovieItem> pagingController;
+  late final PagingController<int, SearchMovieItem> pagingController;
   int page = 1;
   int? totalPage;
   String? query;
@@ -18,10 +18,10 @@ class SearchScreenController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    pagingController = PagingController<int, MovieItem>(fetchPage: fetchMovies, getNextPageKey: (state) => _getNextPageKey());
+    pagingController = PagingController<int, SearchMovieItem>(fetchPage: fetchMovies, getNextPageKey: (state) => _getNextPageKey());
   }
 
-  Future<List<MovieItem>> fetchMovies(int pageKey) async {
+  Future<List<SearchMovieItem>> fetchMovies(int pageKey) async {
     if (query == null) {
       return [];
     }
