@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:movie_test_app/core/constants/app_constants.dart';
 import 'package:movie_test_app/domain/entities/detail_movie.dart';
-import 'package:movie_test_app/features/movie_detail/controller/movie_detail_controller.dart';
+import 'package:movie_test_app/features/movie_detail/controller/movie_detail_screen_controller.dart';
 
 part 'components/movie_content_info.dart';
 part 'components/movie_detail_app_bar.dart';
 part 'components/movie_detail_background.dart';
 part 'components/movie_middle_content.dart';
 
-class MovieDetailScreen extends GetView<MovieDetailController> {
+class MovieDetailScreen extends GetView<MovieDetailScreenController> {
   const MovieDetailScreen({super.key});
 
   @override

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:movie_test_app/core/utils/date_time_parser.dart';
 
 part 'response_detail_movie.g.dart';
 
@@ -68,7 +69,7 @@ class ResponseDetailMovie {
   @JsonKey(name: 'production_countries')
   final List<ProductionCountry>? productionCountries;
 
-  @JsonKey(name: 'release_date')
+  @JsonKey(name: 'release_date', fromJson: DateTimeParser.parseDate)
   final DateTime? releaseDate;
   final int? revenue;
   final int? runtime;

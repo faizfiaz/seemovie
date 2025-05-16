@@ -37,10 +37,7 @@ ResponseDetailMovie _$ResponseDetailMovieFromJson(
       (json['production_countries'] as List<dynamic>?)
           ?.map((e) => ProductionCountry.fromJson(e as Map<String, dynamic>))
           .toList(),
-  releaseDate:
-      json['release_date'] == null
-          ? null
-          : DateTime.parse(json['release_date'] as String),
+  releaseDate: DateTimeParser.parseDate(json['release_date'] as String?),
   revenue: (json['revenue'] as num?)?.toInt(),
   runtime: (json['runtime'] as num?)?.toInt(),
   spokenLanguages:

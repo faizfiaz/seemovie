@@ -4,10 +4,10 @@ import 'package:movie_test_app/domain/entities/movie_item.dart';
 import 'package:movie_test_app/domain/usecases/get_now_playing.dart';
 import 'package:movie_test_app/main.dart';
 
-class HomeController extends GetxController {
+class HomeScreenController extends GetxController {
   final GetNowPlaying getNowPlaying;
 
-  HomeController(this.getNowPlaying);
+  HomeScreenController(this.getNowPlaying);
   var movies = <MovieItem>[].obs;
 
   late final PagingController<int, MovieItem> pagingController;

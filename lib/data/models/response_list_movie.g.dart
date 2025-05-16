@@ -31,14 +31,8 @@ Map<String, dynamic> _$ResponseListMovieToJson(ResponseListMovie instance) =>
     };
 
 Dates _$DatesFromJson(Map<String, dynamic> json) => Dates(
-  maximum:
-      json['maximum'] == null
-          ? null
-          : DateTime.parse(json['maximum'] as String),
-  minimum:
-      json['minimum'] == null
-          ? null
-          : DateTime.parse(json['minimum'] as String),
+  maximum: DateTimeParser.parseDate(json['maximum'] as String?),
+  minimum: DateTimeParser.parseDate(json['minimum'] as String?),
 );
 
 Map<String, dynamic> _$DatesToJson(Dates instance) => <String, dynamic>{
@@ -59,10 +53,7 @@ Result _$ResultFromJson(Map<String, dynamic> json) => Result(
   overview: json['overview'] as String?,
   popularity: (json['popularity'] as num?)?.toDouble(),
   posterPath: json['poster_path'] as String?,
-  releaseDate:
-      json['release_date'] == null
-          ? null
-          : DateTime.parse(json['release_date'] as String),
+  releaseDate: DateTimeParser.parseDate(json['release_date'] as String?),
   title: json['title'] as String?,
   video: json['video'] as bool?,
   voteAverage: (json['vote_average'] as num?)?.toDouble(),

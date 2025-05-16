@@ -14,7 +14,6 @@ class _MovieContentInfo extends StatelessWidget {
           children: [
             Wrap(
               spacing: 12,
-              // runSpacing: 8,
               children: [
                 if (detail.releaseDate != null)
                   Chip(

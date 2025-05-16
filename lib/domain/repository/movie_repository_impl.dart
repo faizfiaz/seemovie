@@ -17,7 +17,12 @@ class MovieRepositoryImpl extends MovieRepository {
   }
 
   @override
-  Future<DetailMovie> getDetailMovie(int id) async {
-    return await remoteDataSource.getDetailMovie(id);
+  Future<DetailMovie> getDetailMovie({required int id}) async {
+    return await remoteDataSource.getDetailMovie(id: id);
+  }
+
+  @override
+  Future<Pair<int, List<MovieItem>>> searchMovies({int page = 1, required String query}) async {
+    return await remoteDataSource.searchMovie(page: page, query: query);
   }
 }

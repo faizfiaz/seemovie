@@ -23,11 +23,21 @@ class MovieRemoteDataSource {
     }
   }
 
-  Future<DetailMovie> getDetailMovie(int id) async {
+  Future<DetailMovie> getDetailMovie({required int id}) async {
     try {
       final response = await _dio.get('/movie/$id?language=en-US');
       final data = ResponseDetailMovie.fromJson(response.data);
       return data.toEntity();
+    } on DioException catch (e) {
+      throw ApiException(e);
+    }
+  }
+
+  Future<Pair<int, List<MovieItem>>> searchMovie({int page = 1, required String query}) async {
+    try {
+      final response = await _dio.get('/search/movie?query=$query&language=en-US&page=$page');
+      final data = ResponseListMovie.fromJson(response.data);
+      return Pair(data.totalPages ?? 1, data.movies);
     } on DioException catch (e) {
       throw ApiException(e);
     }

@@ -7,6 +7,6 @@ class GetDetailMovie {
   GetDetailMovie(this.repository);
 
   Future<DetailMovie> call(int id) async {
-    return await repository.getDetailMovie(id);
+    return await repository.getDetailMovie(id: id);
   }
 }

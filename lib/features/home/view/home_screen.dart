@@ -2,20 +2,32 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:movie_test_app/config/theme/app_colors.dart';
 import 'package:movie_test_app/core/constants/app_constants.dart';
 import 'package:movie_test_app/domain/entities/movie_item.dart';
-import 'package:movie_test_app/features/home/controller/home_controller.dart';
+import 'package:movie_test_app/features/home/controller/home_screen_controller.dart';
 import 'package:movie_test_app/routes/app_navigator.dart';
 import 'package:movie_test_app/routes/app_router.dart';
 import 'package:shimmer/shimmer.dart';
 
-class HomeScreen extends GetView<HomeController> {
+class HomeScreen extends GetView<HomeScreenController> {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Now Playing')),
+      appBar: AppBar(
+        title: const Text('Now Playing'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              final navigator = Get.find<AppNavigator>();
+              navigator.pushNamedWithResult(Routes.searchRoute);
+            },
+          ),
+        ],
+      ),
       body: PagingListener(
         controller: controller.pagingController,
         builder:
@@ -41,7 +53,7 @@ class HomeScreen extends GetView<HomeController> {
                                 child: Container(color: Colors.grey, width: double.infinity, height: double.infinity),
                               ),
                             ),
-                        errorWidget: (context, url, error) => const Icon(Icons.error),
+                        errorWidget: (context, url, error) => const Icon(Icons.error, color: AppColors.error, size: 64),
                         fit: BoxFit.cover,
                       ),
                     ),

@@ -4,7 +4,7 @@ import 'package:movie_test_app/domain/entities/detail_movie.dart';
 import 'package:movie_test_app/domain/entities/movie_item.dart';
 import 'package:movie_test_app/domain/usecases/get_detail_movie.dart';
 
-class MovieDetailController extends GetxController {
+class MovieDetailScreenController extends GetxController {
   final GetDetailMovie getDetailMovie;
   late final MovieItem movie;
 
@@ -12,7 +12,7 @@ class MovieDetailController extends GetxController {
   final isLoading = false.obs;
   final error = RxnString();
 
-  MovieDetailController({required this.getDetailMovie});
+  MovieDetailScreenController({required this.getDetailMovie});
 
   @override
   void onInit() {
