@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "name": "Production",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file=config/prod-config.json"
+      ]
+    },
+    {
+      "name": "Staging",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define-from-file=config/staging-config.json"
+      ]
+    },
+  ],
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "dart.sdkPath": ".fvm/flutter_sdk/bin/dart"
+}

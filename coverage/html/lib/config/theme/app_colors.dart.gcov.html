@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - lib/config/theme/app_colors.dart</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../../../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory lib/config/theme">lib/config/theme</a> - app_colors.dart</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">13.8&nbsp;%</td>
+            <td class="headerCovTableEntry">29</td>
+            <td class="headerCovTableEntry">4</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2025-05-17 11:12:21</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+          </tr>
+                  <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : import 'package:flutter/material.dart';</span>
+<span id="L2"><span class="lineNum">       2</span>              : </span>
+<span id="L3"><span class="lineNum">       3</span>              : class AppColors {</span>
+<span id="L4"><span class="lineNum">       4</span> <span class="tlaUNC">           0 :   AppColors._();</span></span>
+<span id="L5"><span class="lineNum">       5</span>              : </span>
+<span id="L6"><span class="lineNum">       6</span>              :   // Add color here for other colors needed</span>
+<span id="L7"><span class="lineNum">       7</span>              :   static const Color formFill = Color(0xFFF2F4F7);</span>
+<span id="L8"><span class="lineNum">       8</span>              :   static const Color borderCard = Color(0xFFE9EAED);</span>
+<span id="L9"><span class="lineNum">       9</span>              : </span>
+<span id="L10"><span class="lineNum">      10</span> <span class="tlaUNC">           0 :   static ColorScheme colorScheme({Brightness brightness = Brightness.light}) {</span></span>
+<span id="L11"><span class="lineNum">      11</span> <span class="tlaUNC">           0 :     final bool isDark = brightness == Brightness.dark;</span></span>
+<span id="L12"><span class="lineNum">      12</span>              : </span>
+<span id="L13"><span class="lineNum">      13</span> <span class="tlaUNC">           0 :     final cardColor = isDark ? darkBackground.paper : lightBackground.paper;</span></span>
+<span id="L14"><span class="lineNum">      14</span>              :     final backgroundColor =</span>
+<span id="L15"><span class="lineNum">      15</span> <span class="tlaUNC">           0 :         isDark ? darkBackground.paper : lightBackground.paper;</span></span>
+<span id="L16"><span class="lineNum">      16</span>              : </span>
+<span id="L17"><span class="lineNum">      17</span>              :     final bool primaryIsDark =</span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaUNC">           0 :         ThemeData.estimateBrightnessForColor(primary) == Brightness.dark;</span></span>
+<span id="L19"><span class="lineNum">      19</span>              :     final bool secondaryIsDark =</span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaUNC">           0 :         ThemeData.estimateBrightnessForColor(secondary) == Brightness.dark;</span></span>
+<span id="L21"><span class="lineNum">      21</span>              : </span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaUNC">           0 :     return ColorScheme(</span></span>
+<span id="L23"><span class="lineNum">      23</span>              :       primary: primary,</span>
+<span id="L24"><span class="lineNum">      24</span>              :       secondary: secondary,</span>
+<span id="L25"><span class="lineNum">      25</span>              :       surface: cardColor,</span>
+<span id="L26"><span class="lineNum">      26</span>              :       error: error,</span>
+<span id="L27"><span class="lineNum">      27</span>              :       onPrimary: primaryIsDark ? Colors.white : Colors.black,</span>
+<span id="L28"><span class="lineNum">      28</span>              :       onSecondary: secondaryIsDark ? Colors.white : Colors.black,</span>
+<span id="L29"><span class="lineNum">      29</span>              :       onSurface: isDark ? Colors.white : Colors.black,</span>
+<span id="L30"><span class="lineNum">      30</span>              :       onError: isDark ? Colors.black : Colors.white,</span>
+<span id="L31"><span class="lineNum">      31</span>              :       brightness: brightness,</span>
+<span id="L32"><span class="lineNum">      32</span>              :       // DEPRECATED (newest deprecations at the bottom)</span>
+<span id="L33"><span class="lineNum">      33</span>              :       // ignore: deprecated_member_use</span>
+<span id="L34"><span class="lineNum">      34</span>              :       background: backgroundColor,</span>
+<span id="L35"><span class="lineNum">      35</span>              :       // ignore: deprecated_member_use</span>
+<span id="L36"><span class="lineNum">      36</span>              :       onBackground: primaryIsDark ? Colors.white : Colors.black,</span>
+<span id="L37"><span class="lineNum">      37</span>              :     );</span>
+<span id="L38"><span class="lineNum">      38</span>              :   }</span>
+<span id="L39"><span class="lineNum">      39</span>              : </span>
+<span id="L40"><span class="lineNum">      40</span>              :   static const ShadeColor primary = ShadeColor(0xFF009688, &lt;String, Color&gt;{</span>
+<span id="L41"><span class="lineNum">      41</span>              :     _ShadeColorKeys.lighter: Color(0xFFB2DFDB),</span>
+<span id="L42"><span class="lineNum">      42</span>              :     _ShadeColorKeys.light: Color(0xFF4DB6AC),</span>
+<span id="L43"><span class="lineNum">      43</span>              :     _ShadeColorKeys.main: Color(0xFF009688),</span>
+<span id="L44"><span class="lineNum">      44</span>              :     _ShadeColorKeys.dark: Color(0xFF00796B),</span>
+<span id="L45"><span class="lineNum">      45</span>              :     _ShadeColorKeys.darker: Color(0xFF004D40),</span>
+<span id="L46"><span class="lineNum">      46</span>              :   });</span>
+<span id="L47"><span class="lineNum">      47</span>              : </span>
+<span id="L48"><span class="lineNum">      48</span>              :   static const ShadeColor secondary = ShadeColor(0xFFF87500, &lt;String, Color&gt;{</span>
+<span id="L49"><span class="lineNum">      49</span>              :     _ShadeColorKeys.lighter: Color(0xFFFCEDB4),</span>
+<span id="L50"><span class="lineNum">      50</span>              :     _ShadeColorKeys.light: Color(0xFFF8C316),</span>
+<span id="L51"><span class="lineNum">      51</span>              :     _ShadeColorKeys.main: Color(0xFFF87500),</span>
+<span id="L52"><span class="lineNum">      52</span>              :     _ShadeColorKeys.dark: Color(0xFFF87500),</span>
+<span id="L53"><span class="lineNum">      53</span>              :     _ShadeColorKeys.darker: Color(0xFF602E00),</span>
+<span id="L54"><span class="lineNum">      54</span>              :   });</span>
+<span id="L55"><span class="lineNum">      55</span>              : </span>
+<span id="L56"><span class="lineNum">      56</span>              :   static const ShadeColor info = ShadeColor(0xFF74CAFF, &lt;String, Color&gt;{</span>
+<span id="L57"><span class="lineNum">      57</span>              :     _ShadeColorKeys.lighter: Color(0xFFD0F2FF),</span>
+<span id="L58"><span class="lineNum">      58</span>              :     _ShadeColorKeys.light: Color(0xFF74CAFF),</span>
+<span id="L59"><span class="lineNum">      59</span>              :     _ShadeColorKeys.main: Color(0xFF1890FF),</span>
+<span id="L60"><span class="lineNum">      60</span>              :     _ShadeColorKeys.dark: Color(0xFF0C53B7),</span>
+<span id="L61"><span class="lineNum">      61</span>              :     _ShadeColorKeys.darker: Color(0xFF04297A),</span>
+<span id="L62"><span class="lineNum">      62</span>              :   });</span>
+<span id="L63"><span class="lineNum">      63</span>              : </span>
+<span id="L64"><span class="lineNum">      64</span>              :   static const ShadeColor success = ShadeColor(0xFF2CCD70, &lt;String, Color&gt;{</span>
+<span id="L65"><span class="lineNum">      65</span>              :     _ShadeColorKeys.lighter: Color(0xFFEAFAF1),</span>
+<span id="L66"><span class="lineNum">      66</span>              :     _ShadeColorKeys.light: Color(0xFF72DE9F),</span>
+<span id="L67"><span class="lineNum">      67</span>              :     _ShadeColorKeys.main: Color(0xFF2CCD70),</span>
+<span id="L68"><span class="lineNum">      68</span>              :     _ShadeColorKeys.dark: Color(0xFF1F9250),</span>
+<span id="L69"><span class="lineNum">      69</span>              :     _ShadeColorKeys.darker: Color(0xFF12562F),</span>
+<span id="L70"><span class="lineNum">      70</span>              :   });</span>
+<span id="L71"><span class="lineNum">      71</span>              : </span>
+<span id="L72"><span class="lineNum">      72</span>              :   static const ShadeColor warning = ShadeColor(0xFFFFC700, &lt;String, Color&gt;{</span>
+<span id="L73"><span class="lineNum">      73</span>              :     _ShadeColorKeys.lighter: Color(0xFFFFF9EC),</span>
+<span id="L74"><span class="lineNum">      74</span>              :     _ShadeColorKeys.light: Color(0xFFFFD954),</span>
+<span id="L75"><span class="lineNum">      75</span>              :     _ShadeColorKeys.main: Color(0xFFFFC107),</span>
+<span id="L76"><span class="lineNum">      76</span>              :     _ShadeColorKeys.dark: Color(0xFFB58D00),</span>
+<span id="L77"><span class="lineNum">      77</span>              :     _ShadeColorKeys.darker: Color(0xFF6B5400),</span>
+<span id="L78"><span class="lineNum">      78</span>              :   });</span>
+<span id="L79"><span class="lineNum">      79</span>              : </span>
+<span id="L80"><span class="lineNum">      80</span>              :   static const ShadeColor error = ShadeColor(0xFFE04A38, &lt;String, Color&gt;{</span>
+<span id="L81"><span class="lineNum">      81</span>              :     _ShadeColorKeys.lighter: Color(0xFFFDEBEC),</span>
+<span id="L82"><span class="lineNum">      82</span>              :     _ShadeColorKeys.light: Color(0xFFE98F85),</span>
+<span id="L83"><span class="lineNum">      83</span>              :     _ShadeColorKeys.main: Color(0xFFE04A38),</span>
+<span id="L84"><span class="lineNum">      84</span>              :     _ShadeColorKeys.dark: Color(0xFFB12D1E),</span>
+<span id="L85"><span class="lineNum">      85</span>              :     _ShadeColorKeys.darker: Color(0xFF6A1A0F),</span>
+<span id="L86"><span class="lineNum">      86</span>              :   });</span>
+<span id="L87"><span class="lineNum">      87</span>              : </span>
+<span id="L88"><span class="lineNum">      88</span>              :   static const MaterialColor grey = MaterialColor(0xFF737373, &lt;int, Color&gt;{</span>
+<span id="L89"><span class="lineNum">      89</span>              :     100: Color(0xFFFAFAFA),</span>
+<span id="L90"><span class="lineNum">      90</span>              :     200: Color(0xFFE5E5E5),</span>
+<span id="L91"><span class="lineNum">      91</span>              :     300: Color(0xFFD4D4D4),</span>
+<span id="L92"><span class="lineNum">      92</span>              :     400: Color(0xFFA3A3A3),</span>
+<span id="L93"><span class="lineNum">      93</span>              :     500: Color(0xFF737373),</span>
+<span id="L94"><span class="lineNum">      94</span>              :     600: Color(0xFF525252),</span>
+<span id="L95"><span class="lineNum">      95</span>              :     700: Color(0xFF404040),</span>
+<span id="L96"><span class="lineNum">      96</span>              :     800: Color(0xFF262626),</span>
+<span id="L97"><span class="lineNum">      97</span>              :     900: Color(0xFF171717),</span>
+<span id="L98"><span class="lineNum">      98</span>              :   });</span>
+<span id="L99"><span class="lineNum">      99</span>              : </span>
+<span id="L100"><span class="lineNum">     100</span>              :   static const ShadeTextColor lightText =</span>
+<span id="L101"><span class="lineNum">     101</span>              :       ShadeTextColor(0xFF1F1D2B, &lt;String, Color&gt;{</span>
+<span id="L102"><span class="lineNum">     102</span>              :         _ShadeColorKeys.primary: Color(0xFF1F1D2B),</span>
+<span id="L103"><span class="lineNum">     103</span>              :         _ShadeColorKeys.secondary: Color(0xFF6B6879),</span>
+<span id="L104"><span class="lineNum">     104</span>              :         _ShadeColorKeys.disabled: Color(0xFF8D8A9C),</span>
+<span id="L105"><span class="lineNum">     105</span>              :       });</span>
+<span id="L106"><span class="lineNum">     106</span>              : </span>
+<span id="L107"><span class="lineNum">     107</span>              :   static const ShadeTextColor darkText =</span>
+<span id="L108"><span class="lineNum">     108</span>              :       ShadeTextColor(0xFFFFFFFF, &lt;String, Color&gt;{</span>
+<span id="L109"><span class="lineNum">     109</span>              :         _ShadeColorKeys.primary: Color(0xFFFFFFFF),</span>
+<span id="L110"><span class="lineNum">     110</span>              :         _ShadeColorKeys.secondary: Color(0xFF8D8A9C),</span>
+<span id="L111"><span class="lineNum">     111</span>              :         _ShadeColorKeys.disabled: Color(0xFF6B6879),</span>
+<span id="L112"><span class="lineNum">     112</span>              :       });</span>
+<span id="L113"><span class="lineNum">     113</span>              : </span>
+<span id="L114"><span class="lineNum">     114</span>              :   static const ShadeTextColor purple =</span>
+<span id="L115"><span class="lineNum">     115</span>              :       ShadeTextColor(0xFF7339EA, &lt;String, Color&gt;{</span>
+<span id="L116"><span class="lineNum">     116</span>              :         _ShadeColorKeys.primary: Color(0xFF7339EA),</span>
+<span id="L117"><span class="lineNum">     117</span>              :         _ShadeColorKeys.secondary: Color(0xFFF7F5FF),</span>
+<span id="L118"><span class="lineNum">     118</span>              :         _ShadeColorKeys.disabled: Color(0xFF8D8A9C),</span>
+<span id="L119"><span class="lineNum">     119</span>              :       });</span>
+<span id="L120"><span class="lineNum">     120</span>              : </span>
+<span id="L121"><span class="lineNum">     121</span>              :   static const ShadeBackgroundColor lightBackground =</span>
+<span id="L122"><span class="lineNum">     122</span>              :       ShadeBackgroundColor(0x148D8A9C, &lt;String, Color&gt;{</span>
+<span id="L123"><span class="lineNum">     123</span>              :         _ShadeColorKeys.defaults: Color(0x148D8A9C),</span>
+<span id="L124"><span class="lineNum">     124</span>              :         _ShadeColorKeys.paper: Color(0xFFFFFFFF),</span>
+<span id="L125"><span class="lineNum">     125</span>              :         _ShadeColorKeys.neutral: Color(0xFFF8F5FF),</span>
+<span id="L126"><span class="lineNum">     126</span>              :       });</span>
+<span id="L127"><span class="lineNum">     127</span>              : </span>
+<span id="L128"><span class="lineNum">     128</span>              :   static const ShadeBackgroundColor darkBackground =</span>
+<span id="L129"><span class="lineNum">     129</span>              :       ShadeBackgroundColor(0xFF141220, &lt;String, Color&gt;{</span>
+<span id="L130"><span class="lineNum">     130</span>              :         _ShadeColorKeys.defaults: Color(0xFF141220),</span>
+<span id="L131"><span class="lineNum">     131</span>              :         _ShadeColorKeys.paper: Color(0xFF1F1D2B),</span>
+<span id="L132"><span class="lineNum">     132</span>              :         _ShadeColorKeys.neutral: Color(0x1F8D8A9C),</span>
+<span id="L133"><span class="lineNum">     133</span>              :       });</span>
+<span id="L134"><span class="lineNum">     134</span>              : </span>
+<span id="L135"><span class="lineNum">     135</span>              :   static const Color divider = Color(0x3D8D8A9C);</span>
+<span id="L136"><span class="lineNum">     136</span>              :   static const Color border = Color(0x52919EAB);</span>
+<span id="L137"><span class="lineNum">     137</span>              : </span>
+<span id="L138"><span class="lineNum">     138</span>              :   static const ShadeStateColor lightActionState =</span>
+<span id="L139"><span class="lineNum">     139</span>              :       ShadeStateColor(0xFF6B6879, &lt;String, Color&gt;{</span>
+<span id="L140"><span class="lineNum">     140</span>              :         _ShadeColorKeys.active: Color(0xFF6B6879),</span>
+<span id="L141"><span class="lineNum">     141</span>              :         _ShadeColorKeys.hover: Color(0x148D8A9C),</span>
+<span id="L142"><span class="lineNum">     142</span>              :         _ShadeColorKeys.selected: Color(0x298D8A9C),</span>
+<span id="L143"><span class="lineNum">     143</span>              :         _ShadeColorKeys.disabled: Color(0xCC8D8A9C),</span>
+<span id="L144"><span class="lineNum">     144</span>              :         _ShadeColorKeys.disabledBackground: Color(0x3D8D8A9C),</span>
+<span id="L145"><span class="lineNum">     145</span>              :         _ShadeColorKeys.focus: Color(0x3D8D8A9C),</span>
+<span id="L146"><span class="lineNum">     146</span>              :       });</span>
+<span id="L147"><span class="lineNum">     147</span>              : </span>
+<span id="L148"><span class="lineNum">     148</span>              :   static const ShadeStateColor darkActionState =</span>
+<span id="L149"><span class="lineNum">     149</span>              :       ShadeStateColor(0xFF8D8A9C, &lt;String, Color&gt;{</span>
+<span id="L150"><span class="lineNum">     150</span>              :         _ShadeColorKeys.active: Color(0xFF8D8A9C),</span>
+<span id="L151"><span class="lineNum">     151</span>              :         _ShadeColorKeys.hover: Color(0x148D8A9C),</span>
+<span id="L152"><span class="lineNum">     152</span>              :         _ShadeColorKeys.selected: Color(0x298D8A9C),</span>
+<span id="L153"><span class="lineNum">     153</span>              :         _ShadeColorKeys.disabled: Color(0xCC8D8A9C),</span>
+<span id="L154"><span class="lineNum">     154</span>              :         _ShadeColorKeys.disabledBackground: Color(0x3D8D8A9C),</span>
+<span id="L155"><span class="lineNum">     155</span>              :         _ShadeColorKeys.focus: Color(0x3D8D8A9C),</span>
+<span id="L156"><span class="lineNum">     156</span>              :       });</span>
+<span id="L157"><span class="lineNum">     157</span>              : }</span>
+<span id="L158"><span class="lineNum">     158</span>              : </span>
+<span id="L159"><span class="lineNum">     159</span>              : mixin _ShadeColorKeys {</span>
+<span id="L160"><span class="lineNum">     160</span>              :   static const lighter = 'lighter';</span>
+<span id="L161"><span class="lineNum">     161</span>              :   static const light = 'light';</span>
+<span id="L162"><span class="lineNum">     162</span>              :   static const main = 'main';</span>
+<span id="L163"><span class="lineNum">     163</span>              :   static const dark = 'dark';</span>
+<span id="L164"><span class="lineNum">     164</span>              :   static const darker = 'darker';</span>
+<span id="L165"><span class="lineNum">     165</span>              :   static const primary = 'primary';</span>
+<span id="L166"><span class="lineNum">     166</span>              :   static const secondary = 'secondary';</span>
+<span id="L167"><span class="lineNum">     167</span>              :   static const disabled = 'disabled';</span>
+<span id="L168"><span class="lineNum">     168</span>              :   static const defaults = 'defaults';</span>
+<span id="L169"><span class="lineNum">     169</span>              :   static const paper = 'paper';</span>
+<span id="L170"><span class="lineNum">     170</span>              :   static const neutral = 'neutral';</span>
+<span id="L171"><span class="lineNum">     171</span>              :   static const active = 'active';</span>
+<span id="L172"><span class="lineNum">     172</span>              :   static const hover = 'hover';</span>
+<span id="L173"><span class="lineNum">     173</span>              :   static const selected = 'selected';</span>
+<span id="L174"><span class="lineNum">     174</span>              :   static const disabledBackground = 'disabledBackground';</span>
+<span id="L175"><span class="lineNum">     175</span>              :   static const focus = 'focus';</span>
+<span id="L176"><span class="lineNum">     176</span>              : }</span>
+<span id="L177"><span class="lineNum">     177</span>              : </span>
+<span id="L178"><span class="lineNum">     178</span>              : class ShadeColor extends ColorSwatch&lt;String&gt; {</span>
+<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">           2 :   const ShadeColor(super.primary, super.swatch);</span></span>
+<span id="L180"><span class="lineNum">     180</span>              : </span>
+<span id="L181"><span class="lineNum">     181</span>              :   /// The lightest shade.</span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaUNC">           0 :   Color get lighter =&gt; this[_ShadeColorKeys.lighter]!;</span></span>
+<span id="L183"><span class="lineNum">     183</span>              : </span>
+<span id="L184"><span class="lineNum">     184</span>              :   /// The second lightest shade.</span>
+<span id="L185"><span class="lineNum">     185</span> <span class="tlaUNC">           0 :   Color get light =&gt; this[_ShadeColorKeys.light]!;</span></span>
+<span id="L186"><span class="lineNum">     186</span>              : </span>
+<span id="L187"><span class="lineNum">     187</span>              :   /// The default shade.</span>
+<span id="L188"><span class="lineNum">     188</span> <span class="tlaUNC">           0 :   Color get main =&gt; this[_ShadeColorKeys.main]!;</span></span>
+<span id="L189"><span class="lineNum">     189</span>              : </span>
+<span id="L190"><span class="lineNum">     190</span>              :   /// The second darkest shade.</span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaUNC">           0 :   Color get dark =&gt; this[_ShadeColorKeys.dark]!;</span></span>
+<span id="L192"><span class="lineNum">     192</span>              : </span>
+<span id="L193"><span class="lineNum">     193</span>              :   /// The darkest shade.</span>
+<span id="L194"><span class="lineNum">     194</span> <span class="tlaUNC">           0 :   Color get darker =&gt; this[_ShadeColorKeys.darker]!;</span></span>
+<span id="L195"><span class="lineNum">     195</span>              : }</span>
+<span id="L196"><span class="lineNum">     196</span>              : </span>
+<span id="L197"><span class="lineNum">     197</span>              : class ShadeTextColor extends ColorSwatch&lt;String&gt; {</span>
+<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">           2 :   const ShadeTextColor(super.primary, super.swatch);</span></span>
+<span id="L199"><span class="lineNum">     199</span>              : </span>
+<span id="L200"><span class="lineNum">     200</span> <span class="tlaUNC">           0 :   Color get primary =&gt; this[_ShadeColorKeys.primary]!;</span></span>
+<span id="L201"><span class="lineNum">     201</span>              : </span>
+<span id="L202"><span class="lineNum">     202</span> <span class="tlaUNC">           0 :   Color get secondary =&gt; this[_ShadeColorKeys.secondary]!;</span></span>
+<span id="L203"><span class="lineNum">     203</span>              : </span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaUNC">           0 :   Color get disabled =&gt; this[_ShadeColorKeys.disabled]!;</span></span>
+<span id="L205"><span class="lineNum">     205</span>              : }</span>
+<span id="L206"><span class="lineNum">     206</span>              : </span>
+<span id="L207"><span class="lineNum">     207</span>              : class ShadeBackgroundColor extends ColorSwatch&lt;String&gt; {</span>
+<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">           2 :   const ShadeBackgroundColor(super.primary, super.swatch);</span></span>
+<span id="L209"><span class="lineNum">     209</span>              : </span>
+<span id="L210"><span class="lineNum">     210</span> <span class="tlaUNC">           0 :   Color get defaults =&gt; this[_ShadeColorKeys.defaults]!;</span></span>
+<span id="L211"><span class="lineNum">     211</span>              : </span>
+<span id="L212"><span class="lineNum">     212</span> <span class="tlaUNC">           0 :   Color get paper =&gt; this[_ShadeColorKeys.paper]!;</span></span>
+<span id="L213"><span class="lineNum">     213</span>              : </span>
+<span id="L214"><span class="lineNum">     214</span> <span class="tlaUNC">           0 :   Color get neutral =&gt; this[_ShadeColorKeys.neutral]!;</span></span>
+<span id="L215"><span class="lineNum">     215</span>              : }</span>
+<span id="L216"><span class="lineNum">     216</span>              : </span>
+<span id="L217"><span class="lineNum">     217</span>              : class ShadeStateColor extends ColorSwatch&lt;String&gt; {</span>
+<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">           2 :   const ShadeStateColor(super.primary, super.swatch);</span></span>
+<span id="L219"><span class="lineNum">     219</span>              : </span>
+<span id="L220"><span class="lineNum">     220</span> <span class="tlaUNC">           0 :   Color get active =&gt; this[_ShadeColorKeys.active]!;</span></span>
+<span id="L221"><span class="lineNum">     221</span>              : </span>
+<span id="L222"><span class="lineNum">     222</span> <span class="tlaUNC">           0 :   Color get hover =&gt; this[_ShadeColorKeys.hover]!;</span></span>
+<span id="L223"><span class="lineNum">     223</span>              : </span>
+<span id="L224"><span class="lineNum">     224</span> <span class="tlaUNC">           0 :   Color get selected =&gt; this[_ShadeColorKeys.selected]!;</span></span>
+<span id="L225"><span class="lineNum">     225</span>              : </span>
+<span id="L226"><span class="lineNum">     226</span> <span class="tlaUNC">           0 :   Color get disabled =&gt; this[_ShadeColorKeys.disabled]!;</span></span>
+<span id="L227"><span class="lineNum">     227</span>              : </span>
+<span id="L228"><span class="lineNum">     228</span> <span class="tlaUNC">           0 :   Color get disabledBackground =&gt; this[_ShadeColorKeys.disabledBackground]!;</span></span>
+<span id="L229"><span class="lineNum">     229</span>              : </span>
+<span id="L230"><span class="lineNum">     230</span> <span class="tlaUNC">           0 :   Color get focus =&gt; this[_ShadeColorKeys.focus]!;</span></span>
+<span id="L231"><span class="lineNum">     231</span>              : }</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.3.1-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
