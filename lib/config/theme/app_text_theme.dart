@@ -17,7 +17,7 @@ class AppTextTheme {
     debugLabel: 'h1',
     fontFamily: fontFamily,
     fontSize: 40,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w700,
     letterSpacing: 0,
   );
 
