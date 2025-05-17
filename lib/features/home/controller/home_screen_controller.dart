@@ -8,7 +8,6 @@ class HomeScreenController extends GetxController {
   final GetNowPlaying getNowPlaying;
 
   HomeScreenController(this.getNowPlaying);
-  var movies = <HomeMovieItem>[].obs;
 
   late final PagingController<int, HomeMovieItem> pagingController;
   int page = 1;
